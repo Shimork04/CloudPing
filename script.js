@@ -1,8 +1,8 @@
 // Replace 'YOUR_OPENWEATHERMAP_API_KEY' with your OpenWeatherMap API key
-const openWeatherMapApiKey = 'e78ee2e779563ab79f73191bd9f55610';
+const openWeatherMapApiKey = '#secret key';
 
 // Replace 'YOUR_MAPBOX_ACCESS_TOKEN' with your Mapbox access token
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpbXJvayIsImEiOiJjbG1taGJuOTEwbWpvMmxsMWY4ZWRsbWw2In0.knWXZEHCWG4Uh69hGrnA6g';
+mapboxgl.accessToken = '#secret key';
 
 let map;
 let marker;
