@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Map</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+
+    <script>
+        // Replace 'YOUR_OPENWEATHERMAP_API_KEY' with your OpenWeatherMap API key
+        const openWeatherMapApiKey = 'e78ee2e779563ab79f73191bd9f55610';
+
+        // Replace 'YOUR_MAPBOX_ACCESS_TOKEN' with your Mapbox access token
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpbXJvayIsImEiOiJjbG1taGJuOTEwbWpvMmxsMWY4ZWRsbWw2In0.knWXZEHCWG4Uh69hGrnA6g';
+
+        // Function to initialize the map
+        function initMap() {
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11', // You can choose a different map style
+                center: [0, 0], // Initial center coordinates
+                zoom: 5, // Initial zoom level
+            });
+
+            // Add a marker to the map (You can customize this based on user's location)
+            const marker = new mapboxgl.Marker()
+                .setLngLat([0, 0]) // Initial marker position
+                .addTo(map);
+
+            // Call a function to fetch and display weather data
+            fetchWeatherData(map, marker);
+        }
+
+        // Function to fetch and display weather data
+        function fetchWeatherData(map, marker) {
+            // You can use Geolocation API to get user's location, or set a default location
+            const latitude = 0; // Replace with actual latitude
+            const longitude = 0; // Replace with actual longitude
+
+            // Make a request to OpenWeatherMap API
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${openWeatherMapApiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    const weatherInfo = `
+                        Weather: ${data.weather[0].main}
+                        Description: ${data.weather[0].description}
+                        Temperature: ${data.main.temp}°C
+                    `;
+
+                    // Update the marker's popup with weather info
+                    new mapboxgl.Popup()
+                        .setLngLat([longitude, latitude])
+                        .setHTML(weatherInfo)
+                        .addTo(map);
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                });
+        }
+
+        // Call the initMap function to start the application
+        initMap();
+    </script>
+</body>
+</html> -->
